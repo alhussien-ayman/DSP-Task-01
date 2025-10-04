@@ -1772,3 +1772,288 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Enhanced Services Section
+--------------------------------------------------------------*/
+.services .service-item {
+  background-color: var(--surface-color);
+  text-align: center;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  padding: 60px 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.services .service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.services .service-item:hover::before {
+  left: 100%;
+}
+
+.services .service-item .icon {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 20%));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.services .service-item .icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse-animation 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.services .service-item .icon i {
+  color: var(--contrast-color);
+  font-size: 32px;
+  transition: all 0.3s ease;
+}
+
+.services .service-item h3 {
+  font-weight: 700;
+  margin: 20px 0 15px 0;
+  font-size: 22px;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.services .service-item p {
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  position: relative;
+  z-index: 2;
+}
+
+/* Service Features */
+.service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-badge {
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  color: var(--accent-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Service Actions */
+.service-actions {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-explore::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-explore:hover::before {
+  left: 100%;
+}
+
+.btn-explore i {
+  transition: transform 0.3s ease;
+}
+
+.btn-explore:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.btn-explore:hover i {
+  transform: translateX(4px);
+}
+
+/* Hover Effects */
+.services .service-item:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.services .service-item:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 20%), var(--accent-color));
+}
+
+.services .service-item:hover .icon i {
+  transform: scale(1.1);
+}
+
+.services .service-item:hover h3 {
+  color: var(--accent-color);
+}
+
+.services .service-item:hover .feature-badge {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+}
+
+/* Service Hover Effect */
+.service-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 98%), color-mix(in srgb, var(--accent-color), transparent 99%));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.services .service-item:hover .service-hover-effect {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services .service-item {
+    padding: 40px 20px;
+  }
+  
+  .services .service-item .icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .services .service-item .icon i {
+    font-size: 28px;
+  }
+  
+  .service-features {
+    gap: 6px;
+  }
+  
+  .feature-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+  
+  .btn-explore {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Animation for feature badges */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-features .feature-badge {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.service-features .feature-badge:nth-child(1) { animation-delay: 0.1s; }
+.service-features .feature-badge:nth-child(2) { animation-delay: 0.2s; }
+.service-features .feature-badge:nth-child(3) { animation-delay: 0.3s; }
+
+/* Floating animation for service items */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.services .service-item {
+  animation: float 6s ease-in-out infinite;
+}
+
+.services .service-item:nth-child(1) { animation-delay: 0s; }
+.services .service-item:nth-child(2) { animation-delay: 1.5s; }
+.services .service-item:nth-child(3) { animation-delay: 3s; }
+.services .service-item:nth-child(4) { animation-delay: 4.5s; }
